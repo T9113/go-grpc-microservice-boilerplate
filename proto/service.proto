@@ -1,0 +1,10 @@
+syntax = "proto3";
+package api.v1;
+option go_package = "github.com/T9113/go-grpc/api/v1;v1";
+
+service HealthService {
+  rpc Check (HealthRequest) returns (HealthResponse);
+}
+
+message HealthRequest { string service = 1; }
+message HealthResponse { string status = 1; }
